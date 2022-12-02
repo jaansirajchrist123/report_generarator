@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .forms import ContactForm, FormalForm
 
-def home(request):
-	return render(request, 'home.html', {})
+def report_informal(request):
+	return render(request, 'report_informal.html', {})
+def report_formal(request):
+	return render(request, 'report_formal.html', {})
 def homepage(request):
 	return render(request, 'homepage.html', {})
 
@@ -26,7 +28,7 @@ def info(request):
 			data['conclusion']=conclusion
 
 			
-			return render(request,'home.html',data)
+			return render(request,'report_informal.html',data)
 			#to add more go to : forms.py
 			# print(name,email)
 	return render(request,'info.html',{'form':form})
@@ -50,7 +52,7 @@ def formal(request):
 			data['conclusion1']=conclusion1
 
 			
-			return render(request,'formal.html',data)
+			return render(request,'report_formal.html',data)
 			#to add more go to : forms.py
 			# print(name,email)
-	return render(request,'info.html',{'form':form})
+	return render(request,'formal.html',{'form':form})
